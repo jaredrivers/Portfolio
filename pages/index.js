@@ -1,9 +1,10 @@
 import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
-import LandingPage from "./LandingPage";
-import Page2 from "./Page2";
-import { useRef } from "react";
+import About from "./about";
+import Projects from "./projects";
+import Blog from "./blog";
+import ContactMe from "./contact-me";
+import LandingPage from "./landing-page";
+import BackgroundName from "../components/BackgroundName";
 
 export default function Home() {
 	return (
@@ -13,11 +14,14 @@ export default function Home() {
 				<meta name='description' content="Jared River's Tech Portfolio" />
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
-
-			<section>
+			<main className='bg-theme-beige overflow-hidden relative'>
+				<BackgroundName />
 				<LandingPage />
-				<Page2 />
-			</section>
+				<About />
+				<Projects />
+				<Blog />
+				<ContactMe />
+			</main>
 		</>
 	);
 }

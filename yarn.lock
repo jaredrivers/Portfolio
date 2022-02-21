@@ -1080,6 +1080,11 @@ globby@^11.0.4:
     merge2 "^1.4.1"
     slash "^3.0.0"
 
+gsap@^3.9.1:
+  version "3.9.1"
+  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.9.1.tgz#d4c7443540497afee9ddc0824fd0180224e33360"
+  integrity sha512-JSGVYoC6da4pIjdF/yxFU6Rz8OojOIDkbooveZlfNg0+JIoFoRruyfWAEi6R/gUeNcuOiTqUIb0gi1nCNrHf8w==
+
 has-bigints@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/has-bigints/-/has-bigints-1.0.1.tgz#64fe6acb020673e3b78db035a5af69aa9d07b113"
@@ -1843,11 +1848,6 @@ scheduler@^0.20.2:
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
-
-scroll-snap@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/scroll-snap/-/scroll-snap-4.0.2.tgz#b6d6e0b143cd0b79f27d210f0265860ea72d84b3"
-  integrity sha512-jUKs8R//JBZnRZoiCSZy4g8dpKTtpA7Ternn4WVLoAg7HwG4gzDBbjCsbMn9CTn59wtUkplxTqsKQBYYDCdMqA==
 
 semver@^6.3.0:
   version "6.3.0"
