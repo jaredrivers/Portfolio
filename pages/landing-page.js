@@ -3,33 +3,37 @@ import Link from "next/link";
 import Image from "next/image";
 import NavigationMenu from "../components/NavigationMenu";
 import { gsap } from "../node_modules/gsap/dist/gsap.js";
+import profileImg from "../public/profile1.png";
 
 function LandingPage() {
 	useEffect(() => {
-		gsap.to(".profileImg", {
+		gsap.to(".profileDiv", {
 			duration: 1.5,
 			ease: "power3.out",
-			y: 300,
+			y: 100,
 			opacity: 1,
 		});
 	}, []);
+
 	return (
-		<div className='h-screen w-screen p-2 overflow-hidden relative'>
-			<div className='inline-grid grid-cols-3 w-full'>
-				<div className='flex flex-nowrap pt-10 w-fit'>
-					<NavigationMenu />
-				</div>
-				<img
-					src={
-						"https://res.cloudinary.com/jaredriver/image/upload/v1645521514/profile1_ssfnor.png" ||
-						"../public/profile1.png"
-					}
+		<div className='h-screen w-screen p-2 overflow-hidden sm:grid sm:grid-cols-3 relative'>
+			<div className='flex flex-nowrap pt-10 w-auto'>
+				<NavigationMenu />
+			</div>
+			<div className='profileDiv flex flex-col items-center opacity-0 relative -top-25 sm:top-0'>
+				<Image
+					src={profileImg}
 					alt='profile image'
-					width='350px'
-					height='344px'
-					className='profileImg rounded-full absolute left-2/4 -translate-y-2/4 -translate-x-2/4 self-center md:mt-10 opacity-0'
+					width={350}
+					height={344}
+					layout='fixed'
+					className='rounded-full'
 				/>
-				<div className='flex '></div>
+				<div className='flex flex-col m-2 self-center justify-center items-center w-max space-y-2'>
+					<p className='text-center'>JARED RIVER</p>
+					<p className='text-center'>FULL STACK WEB DEVELOPER / ENGINEER</p>
+					<p className='text-center'>TEL AVIV, ISRAEL</p>
+				</div>
 			</div>
 		</div>
 	);

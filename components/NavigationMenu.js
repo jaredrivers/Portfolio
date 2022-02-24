@@ -20,9 +20,9 @@ function NavigationMenu() {
 	}, []);
 
 	return (
-		<ul className='w-full'>
+		<ul className='w-full d-flex flex-row'>
 			{menuPages.map((item) => (
-				<Link href={item.link}>
+				<Link key={item.link} href={item.link}>
 					<li className='navMenu text-black font-medium text-xl hover:text-theme-blue-dark cursor-pointer'>
 						{item.label}
 					</li>
