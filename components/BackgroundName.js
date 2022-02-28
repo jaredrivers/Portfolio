@@ -9,38 +9,48 @@ function BackgroundName() {
 
 	useEffect(() => {
 		const element = ref.current;
-		gsap.from(element.querySelector(".jared"), {
-			x: 1000,
-			duration: 10,
-			scrollTrigger: {
-				trigger: ".jared",
-				start: "top center",
-				end: "bottom top",
-				scrub: true,
+		gsap.fromTo(
+			element.querySelector(".jared"),
+			{
+				x: 2000,
 			},
-		});
+			{
+				x: -1000,
+				scrollTrigger: {
+					trigger: ".jared",
+					start: "top bottom",
+					end: "bottom top",
+					scrub: true,
+				},
+			}
+		);
 	}, []);
 	useEffect(() => {
 		const element = ref.current;
-		gsap.from(element.querySelector(".river"), {
-			x: -1500,
-			duration: 10,
-			scrollTrigger: {
-				trigger: ".river",
-				start: "top center",
-				end: "bottom top",
-				scrub: true,
+		gsap.fromTo(
+			element.querySelector(".river"),
+			{
+				x: -1000,
 			},
-		});
+			{
+				x: 1000,
+				scrollTrigger: {
+					trigger: ".river",
+					start: "top bottom",
+					end: "bottom top",
+					scrub: true,
+				},
+			}
+		);
 	}, []);
 
 	return (
 		<div ref={ref} className='w-fit h-fit'>
-			<div className='absolute mt-[12%] flex flex-col opacity-10'>
+			<div className=' absolute mt-[12%] flex flex-col opacity-10'>
 				<span ref={element} className='jared text-[35rem]'>
 					JARED
 				</span>
-				<span ref={element} className='river text-[35rem] '>
+				<span ref={element} className='river text-[35rem]'>
 					RIVER
 				</span>
 			</div>

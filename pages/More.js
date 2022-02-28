@@ -1,7 +1,11 @@
 import React from "react";
 
 function More() {
-	return <div className='h-screen w-screen p-2'>PHOTOGRAPHY</div>;
+	return (
+		<div id='more' className='w-screen h-screen p-2'>
+			Photography
+		</div>
+	);
 }
 
 export default More;

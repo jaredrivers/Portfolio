@@ -16,7 +16,9 @@ function LandingPage() {
 	}, []);
 
 	return (
-		<div className='h-screen w-screen p-2 overflow-hidden sm:grid sm:grid-cols-3 relative'>
+		<div
+			id='landingPage'
+			className='h-screen w-screen p-2 overflow-hidden sm:grid sm:grid-cols-3 relative'>
 			<div className='flex flex-nowrap pt-10 w-auto'>
 				<NavigationMenu />
 			</div>

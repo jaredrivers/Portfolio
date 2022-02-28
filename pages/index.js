@@ -1,12 +1,14 @@
 import Head from "next/head";
+import axios from "axios";
 import About from "./about";
 import Projects from "./projects";
 import Blog from "./blog";
 import ContactMe from "./contact-me";
 import LandingPage from "./landing-page";
+import More from "./more";
 import BackgroundName from "../components/BackgroundName";
 
-export default function Home() {
+export default function Home({ content }) {
 	return (
 		<>
 			<Head>
@@ -19,9 +21,21 @@ export default function Home() {
 				<LandingPage />
 				<About />
 				<Projects />
-				<Blog />
+				<Blog content={content} />
+				<More />
 				<ContactMe />
 			</main>
 		</>
 	);
+}
+
+export async function getStaticProps() {
+	const res = await axios.get(process.env.STRAPI_API_URL);
+	const posts = res.data.data;
+
+	return {
+		props: {
+			content: posts,
+		},
+	};
 }
