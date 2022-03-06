@@ -4,6 +4,7 @@ import Image from "next/image";
 import NavigationMenu from "../components/NavigationMenu";
 import { gsap } from "../node_modules/gsap/dist/gsap.js";
 import profileImg from "../public/profile1.png";
+import Footer from "../components/Footer";
 
 function LandingPage() {
 	useEffect(() => {
@@ -22,7 +23,7 @@ function LandingPage() {
 			<div className='flex flex-nowrap pt-10 w-auto'>
 				<NavigationMenu />
 			</div>
-			<div className='profileDiv flex flex-col items-center opacity-0 relative -top-25 sm:top-0'>
+			<div className='profileDiv flex flex-col items-center opacity-0 relative -top-20 sm:top-0'>
 				<Image
 					src={profileImg}
 					alt='profile image'
@@ -35,6 +36,7 @@ function LandingPage() {
 					<p className='text-center'>JARED RIVER</p>
 					<p className='text-center'>FULL STACK WEB DEVELOPER / ENGINEER</p>
 					<p className='text-center'>TEL AVIV, ISRAEL</p>
+					<Footer />
 				</div>
 			</div>
 		</div>

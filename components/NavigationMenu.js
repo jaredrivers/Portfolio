@@ -22,7 +22,12 @@ function NavigationMenu() {
 	return (
 		<ul className='w-full d-flex flex-row'>
 			{menuPages.map((item) => (
-				<Link key={item.id} to={item.id} smooth={true} duration={1000}>
+				<Link
+					key={item.id}
+					activeClass='text-red-400'
+					to={item.id}
+					smooth={true}
+					duration={1000}>
 					<li className='navMenu text-black font-medium text-xl hover:text-theme-blue-dark cursor-pointer'>
 						{item.label}
 					</li>
