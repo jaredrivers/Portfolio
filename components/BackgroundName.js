@@ -13,9 +13,11 @@ function BackgroundName() {
 			element.querySelector(".jared"),
 			{
 				x: 2000,
+				"z-index": "-10",
 			},
 			{
 				x: -1000,
+				"z-index": "-10",
 				scrollTrigger: {
 					trigger: ".jared",
 					start: "top bottom",
