@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 function ContactMe() {
 	const formInputs = [
 		{ type: "name", name: "name", label: "NAME", classes: "" },
+		{ type: "tel", name: "phone", label: "PHONE", classes: "" },
 		{ type: "email", name: "email", label: "EMAIL", classes: "" },
 		{ type: "textarea", name: "message", label: "MESSAGE", classes: "" },
 	];

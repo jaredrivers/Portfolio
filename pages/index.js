@@ -10,8 +10,9 @@ import More from "./more";
 import BackgroundName from "../components/BackgroundName";
 import Navbar from "../components/Navbar";
 import gsap from "../node_modules/gsap/dist/gsap.js";
-import Footer from "../components/Footer";
-export default function Home({ content }) {
+import qs from "querystring";
+
+export default function Home({ posts, techItems, url }) {
 	useEffect(() => {
 		gsap.fromTo(
 			".navbar",
@@ -45,9 +46,9 @@ export default function Home({ content }) {
 				<navbar>
 					<Navbar />
 				</navbar>
-				<About />
+				<About items={techItems} url={url} />
 				<Projects />
-				<Blog content={content} />
+				<Blog content={posts} />
 				<More />
 				<ContactMe />
 			</main>
@@ -56,12 +57,28 @@ export default function Home({ content }) {
 }
 
 export async function getStaticProps() {
-	const res = await axios.get(process.env.STRAPI_API_URL);
-	const posts = res.data.data;
+	const url = process.env.STRAPI_API_URL;
+	const query = qs.stringify(
+		{
+			populate: "*",
+		},
+		{
+			encodeValuesOnly: true,
+		}
+	);
+	const techRes = await axios.get(
+		process.env.STRAPI_API_URL + `/technologies?${query}`
+	);
+	const postsRes = await axios.get(url + "/posts");
+
+	const posts = postsRes.data.data;
+	const techItems = techRes.data.data;
 
 	return {
 		props: {
-			content: posts,
+			posts,
+			techItems,
+			url,
 		},
 	};
 }
