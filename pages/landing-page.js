@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import NavigationMenu from "../components/NavigationMenu";
 import { gsap } from "../node_modules/gsap/dist/gsap.js";
@@ -30,7 +29,8 @@ function LandingPage() {
 					width={350}
 					height={344}
 					layout='fixed'
-					className='rounded-full'
+					className='rounded-full pointer-events-none'
+					priority
 				/>
 				<div className='flex flex-col m-2 self-center justify-center items-center w-max space-y-2'>
 					<p className='text-center'>JARED RIVER</p>

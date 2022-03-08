@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Hamburger from "hamburger-react";
 import { Link } from "react-scroll";
 
 function Navbar({ isOpen, setOpen }) {
 	const menuPages = [
-		{ id: "landingPage", link: "/", label: "TOP" },
+		{ id: "landingPage", link: "/landing-page", label: "TOP" },
 		{ id: "about", link: "/about", label: "ABOUT" },
 		{ id: "projects", link: "/projects", label: "PROJECTS" },
 		{ id: "blog", link: "/blog", label: "BLOG" },
@@ -17,16 +17,16 @@ function Navbar({ isOpen, setOpen }) {
 			<div className='grid justify-items-stretch w-inherit px-3'>
 				<div className='flex flex-col-reverse items-end md:flex-row md:items-center md:justify-end'>
 					{isOpen && (
-						<ul className='grid justify-items-end md:flex md:items-center md:space-x-2 space-y-0 md:bg-theme-blue-light md:rounded-lg md:p-1'>
+						<ul className='grid justify-items-end md:flex md:items-center md:space-x-2'>
 							{menuPages.map((item) => (
 								<Link
 									key={item.id}
-									activeClass='text-red-600'
+									activeClass='text-theme-blue-dark'
 									to={item.id}
 									smooth={true}
 									duration={1000}
 									spy={true}>
-									<li className='font-medium text-xl hover:text-theme-blue-dark bg-theme-blue-light md:bg-transparent cursor-pointer rounded-l-lg md:rounded-none p-2 -m-1'>
+									<li className='font-medium text-xl hover:text-theme-blue-dark md:bg-transparent cursor-pointer'>
 										{item.label}
 									</li>
 								</Link>

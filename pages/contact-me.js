@@ -20,13 +20,13 @@ function ContactMe() {
 								<textarea
 									name={item.name}
 									rows={5}
-									className={`${item.classes} reqiured block outline:none text-xl bg-theme-beige w-full p-1 m-1 border-b-2 border-gray-400 focus:border-theme-red outline-none`}
+									className={`${item.classes} reqiured block outline:none text-xl bg-theme-beige w-full p-1 m-1 border-b-2 border-gray-400 focus:border-blue-600 outline-none`}
 								/>
 							) : (
 								<input
 									type={item.type}
 									name={item.name}
-									className={`${item.classes} reqiured block outline:none text-xl bg-theme-beige w-full p-1 m-1 border-b-2 border-gray-400 focus:border-theme-red outline-none`}
+									className={`${item.classes} reqiured block outline:none text-xl bg-theme-beige w-full p-1 m-1 border-b-2 border-gray-400 focus:border-blue-600 outline-none`}
 								/>
 							)}
 						</div>

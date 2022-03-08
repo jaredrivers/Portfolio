@@ -4,6 +4,7 @@ import { Link } from "react-scroll";
 
 function NavigationMenu() {
 	const menuPages = [
+		{ id: "landingPage", link: "/", label: "TOP" },
 		{ id: "about", link: "/about", label: "ABOUT" },
 		{ id: "projects", link: "/projects", label: "PROJECTS" },
 		{ id: "blog", link: "/blog", label: "BLOG" },
@@ -24,11 +25,12 @@ function NavigationMenu() {
 			{menuPages.map((item) => (
 				<Link
 					key={item.id}
-					activeClass='text-red-400'
+					activeClass='text-theme-blue-dark'
 					to={item.id}
 					smooth={true}
-					duration={1000}>
-					<li className='navMenu text-black font-medium text-xl hover:text-theme-blue-dark cursor-pointer'>
+					duration={1000}
+					spy={true}>
+					<li className='navMenu font-medium text-xl hover:text-theme-blue-dark cursor-pointer'>
 						{item.label}
 					</li>
 				</Link>
