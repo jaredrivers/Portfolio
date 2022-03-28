@@ -3,7 +3,7 @@ import Head from "next/head";
 import axios from "axios";
 import About from "./about";
 import Projects from "./projects";
-import Blog from "./blog";
+import Blog from "./blog/blog";
 import ContactMe from "./contact-me";
 import LandingPage from "./landing-page";
 import More from "./more";
@@ -22,6 +22,7 @@ export default function Home({
 	service_id,
 }) {
 	const [isOpen, setOpen] = useState(false);
+	console.log(posts);
 
 	useEffect(() => {
 		gsap.fromTo(

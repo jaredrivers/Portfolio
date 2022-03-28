@@ -10,7 +10,7 @@ function LandingPage() {
 		gsap.to(".profileDiv", {
 			duration: 1.5,
 			ease: "power3.out",
-			y: 100,
+			y: 150,
 			opacity: 1,
 		});
 	}, []);
@@ -22,7 +22,7 @@ function LandingPage() {
 			<div className='flex flex-nowrap pt-10 w-auto '>
 				<NavigationMenu />
 			</div>
-			<div className='profileDiv flex flex-col items-center opacity-0 relative -top-20 space-y-3'>
+			<div className='profileDiv flex flex-col items-center opacity-0 relative -top-28 sm:top-0 space-y-3'>
 				<Image
 					src={profileImg}
 					alt='profile image'
