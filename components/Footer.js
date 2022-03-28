@@ -6,8 +6,8 @@ import instagram from "../public/instagram.svg";
 
 function Footer() {
 	return (
-		<footer className='w-screen h-[20%]  bottom-10'>
-			<div className='p-3 flex justify-center items-cente '>
+		<footer className='w-screen h-[20%]'>
+			<div className='flex justify-center items-cente '>
 				<div className='icons flex space-x-3'>
 					<a
 						href='https://www.github.com/jaredrivers '

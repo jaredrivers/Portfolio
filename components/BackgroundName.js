@@ -17,14 +17,13 @@ function BackgroundName() {
 		gsap.fromTo(
 			element.querySelector(".jared"),
 			{
-				x: 3000,
-				y: 10,
+				x: 1500,
 			},
 			{
-				x: -50,
+				x: -500,
 				scrollTrigger: {
 					trigger: ".jared",
-					start: "top bottom",
+					start: "top center",
 					end: "bottom top",
 					scrub: true,
 				},
@@ -39,8 +38,7 @@ function BackgroundName() {
 				x: -1500,
 			},
 			{
-				x: 100,
-
+				x: 500,
 				scrollTrigger: {
 					trigger: ".river",
 					start: "top bottom",
@@ -54,17 +52,11 @@ function BackgroundName() {
 	return (
 		<div ref={ref} className='w-fit h-fit '>
 			<div className='absolute pt-[12%] flex flex-col opacity-10'>
-				<div>
-					<Image
-						src={jared_cap}
-						className='jared m-0 p-0 max-w-none max-h-100 pointer-events-none '
-					/>
+				<div className='jared'>
+					<span className='text-[30rem]'>JARED</span>
 				</div>
-				<div className=''>
-					<Image
-						src={river_cap}
-						className='river m-0 p-0 max-w-none max-h-100 pointer-events-none '
-					/>
+				<div className='river'>
+					<span className='text-[30rem]'>RIVER</span>
 				</div>
 			</div>
 		</div>

@@ -18,11 +18,11 @@ function LandingPage() {
 	return (
 		<div
 			id='landingPage'
-			className='h-screen w-screen p-2 overflow-hidden sm:grid sm:grid-cols-3 relative'>
-			<div className='flex flex-nowrap pt-10 w-auto'>
+			className='h-screen w-screen p-2 overflow-hidden sm:grid sm:grid-cols-3 relative space-y-3'>
+			<div className='flex flex-nowrap pt-10 w-auto '>
 				<NavigationMenu />
 			</div>
-			<div className='profileDiv flex flex-col items-center opacity-0 relative -top-20 sm:top-0'>
+			<div className='profileDiv flex flex-col items-center opacity-0 relative -top-20 space-y-3'>
 				<Image
 					src={profileImg}
 					alt='profile image'
@@ -32,10 +32,11 @@ function LandingPage() {
 					className='rounded-full pointer-events-none'
 					priority
 				/>
-				<div className='flex flex-col m-2 self-center justify-center items-center w-max space-y-2'>
+				<div className='flex flex-col self-center justify-center items-center w-max space-y-2'>
 					<p className='text-center'>JARED RIVER</p>
-					<p className='text-center'>FULL STACK WEB DEVELOPER / ENGINEER</p>
-					<p className='text-center'>TEL AVIV, ISRAEL</p>
+					<p className='text-center'>FULL STACK WEB DEVELOPER / ENGINEER </p>
+					<p className='text-center'>PHOTOJOURNALIST</p>
+					<p className='text-center'>TEL AVIV</p>
 					<Footer />
 				</div>
 			</div>

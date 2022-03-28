@@ -12,7 +12,15 @@ import Navbar from "../components/Navbar";
 import gsap from "../node_modules/gsap/dist/gsap.js";
 import qs from "querystring";
 
-export default function Home({ posts, techItems, url }) {
+export default function Home({
+	posts,
+	techItems,
+	url,
+	email,
+	user_id,
+	send_js_token,
+	service_id,
+}) {
 	const [isOpen, setOpen] = useState(false);
 
 	useEffect(() => {
@@ -50,14 +58,24 @@ export default function Home({ posts, techItems, url }) {
 				<Projects />
 				<Blog content={posts} />
 				<More />
-				<ContactMe />
+				<ContactMe
+					email={email}
+					service_id={service_id}
+					user_id={user_id}
+					token={send_js_token}
+				/>
 			</main>
 		</>
 	);
 }
 
 export async function getStaticProps() {
+	const email = process.env.EMAIL;
 	const url = process.env.STRAPI_API_URL;
+	const user_id = process.env.SEND_JS_USER_ID;
+	const send_js_token = process.env.SEND_JS_TOKEN;
+	const service_id = process.env.SEND_JS_SERVICE_ID;
+
 	const query = qs.stringify(
 		{
 			populate: "*",
@@ -79,6 +97,10 @@ export async function getStaticProps() {
 			posts,
 			techItems,
 			url,
+			email,
+			user_id,
+			send_js_token,
+			service_id,
 		},
 	};
 }
