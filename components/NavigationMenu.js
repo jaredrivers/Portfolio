@@ -1,16 +1,8 @@
 import React, { useEffect } from "react";
 import { gsap } from "../node_modules/gsap/dist/gsap.js";
 import { Link } from "react-scroll";
-import { useRouter } from "next/router";
 
 function NavigationMenu() {
-	const router = useRouter();
-
-	const setUrlHandler = (item) => {
-		console.log(item);
-		window.history.replaceState({ pageID: item.id }, "", item.link);
-	};
-
 	const menuPages = [
 		{ id: "landingPage", link: "/", label: "TOP" },
 		{ id: "about", link: "/about", label: "ABOUT" },
@@ -37,8 +29,7 @@ function NavigationMenu() {
 					to={item.id}
 					smooth={true}
 					duration={1000}
-					spy={true}
-					onSetActive={() => setUrlHandler(item)}>
+					spy={true}>
 					<li className='navMenu font-medium text-xl hover:text-theme-blue-dark cursor-pointer'>
 						{item.label}
 					</li>

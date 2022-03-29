@@ -11,9 +11,8 @@ function Blog({ content }) {
 			className='flex w-auto h-screen p-2 justify-center items-center'>
 			<ul className='flex  sm:justify-center space-x-10 h-2/3 '>
 				{content.map((post) => (
-					<Link href={`/blog/${post.id}`}>
+					<Link href={`/blog/${post.id}`} key={post.id}>
 						<li
-							key={post.id}
 							id={post.id}
 							onClick={postHandler}
 							className='flex flex-col p-3 w-inherit sm:w-[45%] content-center border border-black rounded-md transition ease-in-out delay-50 hover:scale-105 shadow-md hover:cursor-pointer'>
