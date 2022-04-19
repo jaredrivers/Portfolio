@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import axios from "axios";
 import About from "./about";
-import Projects from "./projects";
+import Projects from "./projects/projects";
 import ContactMe from "./contact-me";
 import LandingPage from "./landing-page";
-import More from "./more";
 import BackgroundName from "../components/BackgroundName";
 import Navbar from "../components/Navbar";
 import gsap from "../node_modules/gsap/dist/gsap.js";
@@ -56,7 +55,6 @@ export default function Home({
 				</navbar>
 				<About items={techItems} url={url} />
 				<Projects />
-				<More />
 				<ContactMe
 					email={email}
 					service_id={service_id}

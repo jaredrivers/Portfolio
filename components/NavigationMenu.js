@@ -7,7 +7,6 @@ function NavigationMenu() {
 		{ id: "landingPage", link: "/", label: "TOP" },
 		{ id: "about", link: "/about", label: "ABOUT" },
 		{ id: "projects", link: "/projects", label: "PROJECTS" },
-		{ id: "more", link: "/more", label: "MORE" },
 		{ id: "contactMe", link: "/contact-me", label: "CONTACT ME" },
 	];
 
@@ -15,12 +14,12 @@ function NavigationMenu() {
 		gsap.to(".navMenu", {
 			duration: 1,
 			ease: "power1.inOut",
-			x: 50,
+			x: 40,
 		});
 	}, []);
 
 	return (
-		<ul className='w-full d-flex flex-row'>
+		<ul className='w-full d-flex flex-row -left-40'>
 			{menuPages.map((item) => (
 				<Link
 					key={item.id}

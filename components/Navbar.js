@@ -7,7 +7,6 @@ function Navbar({ isOpen, setOpen }) {
 		{ id: "landingPage", link: "/landing-page", label: "TOP" },
 		{ id: "about", link: "/about", label: "ABOUT" },
 		{ id: "projects", link: "/projects", label: "PROJECTS" },
-		{ id: "more", link: "/more", label: "MORE" },
 		{ id: "contactMe", link: "contact-me", label: "CONTACT ME" },
 	];
 
