@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import NavigationMenu from "../components/NavigationMenu";
 import { gsap } from "../node_modules/gsap/dist/gsap.js";
-import profileImg from "../public/profile1.png";
+import profileImg from "../public/profile10mb.png";
 import Footer from "../components/Footer";
 
 function LandingPage() {
@@ -10,7 +10,7 @@ function LandingPage() {
 		gsap.to(".profileDiv", {
 			duration: 1.5,
 			ease: "power3.out",
-			y: 150,
+			y: 120,
 			opacity: 1,
 		});
 	}, []);
@@ -30,12 +30,12 @@ function LandingPage() {
 					height={344}
 					layout='fixed'
 					className='rounded-full pointer-events-none'
+					title='Profile Image'
 					priority
 				/>
 				<div className='flex flex-col self-center justify-center items-center w-max space-y-2'>
 					<p className='text-center'>JARED RIVER</p>
 					<p className='text-center'>FULL STACK WEB DEVELOPER / ENGINEER </p>
-					<p className='text-center'>PHOTOJOURNALIST</p>
 					<p className='text-center'>TEL AVIV</p>
 					<Footer />
 				</div>

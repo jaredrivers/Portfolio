@@ -19,9 +19,8 @@ export async function getStaticPaths() {
 }
 
 function Post({ post }) {
-	console.log(post);
 	return (
-		<div className='flex flex-col p-10 items-center overflow-scroll space-y-5 font-mono'>
+		<div className='flex flex-col p-10 items-center space-y-5 font-mono h-screen'>
 			<h1 className='font-bold text-xl'>{post.attributes.title}</h1>
 			<p>{post.attributes.content}</p>
 		</div>

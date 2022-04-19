@@ -8,7 +8,6 @@ function NavigationMenu() {
 		{ id: "about", link: "/about", label: "ABOUT" },
 		{ id: "projects", link: "/projects", label: "PROJECTS" },
 		{ id: "blog", link: "/blog", label: "BLOG" },
-		{ id: "more", link: "/more", label: "MORE" },
 		{ id: "contactMe", link: "/contact-me", label: "CONTACT ME" },
 	];
 

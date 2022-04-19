@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import axios from "axios";
 import About from "./about";
-import Projects from "./projects";
+import Projects from "./projects/projects";
 import Blog from "./blog/blog";
 import ContactMe from "./contact-me";
 import LandingPage from "./landing-page";
-import More from "./more";
 import BackgroundName from "../components/BackgroundName";
 import Navbar from "../components/Navbar";
 import gsap from "../node_modules/gsap/dist/gsap.js";
@@ -22,7 +21,6 @@ export default function Home({
 	service_id,
 }) {
 	const [isOpen, setOpen] = useState(false);
-	console.log(posts);
 
 	useEffect(() => {
 		gsap.fromTo(
@@ -58,7 +56,6 @@ export default function Home({
 				<About items={techItems} url={url} />
 				<Projects />
 				<Blog content={posts} />
-				<More />
 				<ContactMe
 					email={email}
 					service_id={service_id}

@@ -17,3 +17,11 @@ a {
 * {
 	box-sizing: border-box;
 }
+.scrollbar {
+	-ms-overflow-style: none; /* for Internet Explorer, Edge */
+	scrollbar-width: none; /* for Firefox */
+	overflow-y: scroll;
+}
+.scrollbar::-webkit-scrollbar {
+	display: none;
+}
