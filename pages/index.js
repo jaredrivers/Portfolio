@@ -3,7 +3,6 @@ import Head from "next/head";
 import axios from "axios";
 import About from "./about";
 import Projects from "./projects";
-import Blog from "./blog/blog";
 import ContactMe from "./contact-me";
 import LandingPage from "./landing-page";
 import More from "./more";
@@ -57,7 +56,6 @@ export default function Home({
 				</navbar>
 				<About items={techItems} url={url} />
 				<Projects />
-				<Blog content={posts} />
 				<More />
 				<ContactMe
 					email={email}
@@ -88,14 +86,11 @@ export async function getStaticProps() {
 	const techRes = await axios.get(
 		process.env.STRAPI_API_URL + `/technologies?${query}`
 	);
-	const postsRes = await axios.get(url + "/posts");
 
-	const posts = postsRes.data.data;
 	const techItems = techRes.data.data;
 
 	return {
 		props: {
-			posts,
 			techItems,
 			url,
 			email,
