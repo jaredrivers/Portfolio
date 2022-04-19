@@ -22,8 +22,9 @@ export const getServerSideProps = async (context) => {
 
 function ExampleProject({ projectData, url }) {
 	const router = useRouter();
-	const images = projectData.attributes.samples.data;
+	let images = projectData.attributes.samples.data;
 	console.log(images);
+	images = images.sort((a, b) => a.attributes.name - b.attributes.name);
 	return (
 		<div className='flex justify-center font-mono h-screen w-screen relative'>
 			<div className='about-pagewrapper flex flex-col space-y-5 w-[80%] sm:w-[90%] sm:pt-15 h-full '>

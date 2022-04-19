@@ -20,7 +20,6 @@ export default function Home({
 	service_id,
 }) {
 	const [isOpen, setOpen] = useState(false);
-	console.log(posts);
 
 	useEffect(() => {
 		gsap.fromTo(
@@ -68,10 +67,10 @@ export default function Home({
 
 export async function getStaticProps() {
 	const email = process.env.EMAIL;
-	const url = process.env.STRAPI_API_URL;
 	const user_id = process.env.SEND_JS_USER_ID;
 	const send_js_token = process.env.SEND_JS_TOKEN;
 	const service_id = process.env.SEND_JS_SERVICE_ID;
+	const url = process.env.STRAPI_API_URL;
 
 	const query = qs.stringify(
 		{
