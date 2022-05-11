@@ -24,8 +24,9 @@ export default function Home({
 	useEffect(() => {
 		gsap.fromTo(
 			".navbar",
-			{ opacity: 0 },
+			{ opacity: 0, display: "none" },
 			{
+				display: "block",
 				opacity: 1,
 				duration: 1,
 				ease: "power4.out",
