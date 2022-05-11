@@ -85,7 +85,9 @@ function ContactMe({ email, user_id, service_id }) {
 	return (
 		<div id='contactMe' className='flex h-screen w-screen items-center'>
 			<div className='mt-[5rem] md:mt-0 w-[90%] md:w-[70%] md:max-w-full mx-auto'>
-				<p className='text-2xl mb-[2rem] sm:mb-[5rem]`'>LET'S KEEP IN TOUCH</p>
+				<p className='text-2xl mb-[2rem] sm:mb-[5rem]`'>
+					LET&apos;S KEEP IN TOUCH
+				</p>
 				<form className='space-y-4' ref={form} onSubmit={submitHandler}>
 					{formInputs.map((item) => (
 						<div key={item.name}>

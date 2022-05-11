@@ -74,7 +74,10 @@ function ProjectsCarousel({ data, url }) {
 								</div>
 							</div>
 							<div className='flex-col items-center hover:cursor-pointer transition ease-in-out delay-50 hover:scale-105 content-center'>
-								<a href={project.attributes.siteUrl} target='_blank'>
+								<a
+									href={project.attributes.siteUrl}
+									target='_blank '
+									rel='noreferrer'>
 									<Image
 										src={
 											url.replace("/api", "") +

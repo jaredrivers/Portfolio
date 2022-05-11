@@ -51,7 +51,7 @@ function ExampleProject({ projectData, url }) {
 						<p className='right-title self-center '>TECHNOLOGIES</p>
 						<div className='grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 m-auto'>
 							{projectData.attributes.technologies.data.map((item) => (
-								<div className='flex items-center justify-center'>
+								<div key={item.id} className='flex items-center justify-center'>
 									{item.attributes.label}
 								</div>
 							))}

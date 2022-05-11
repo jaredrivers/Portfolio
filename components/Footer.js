@@ -12,18 +12,21 @@ function Footer() {
 					<a
 						href='https://www.github.com/jaredrivers '
 						target='_blank'
+						rel='noreferrer'
 						title='Link to Github profile'>
 						<Image src={github} className='cursor-pointer' />
 					</a>
 					<a
 						href='https://www.linkedin.com/in/jared-fischer'
 						target='_blank'
+						rel='noreferrer'
 						title='Link to LinkedIn profile'>
 						<Image src={linkedin} className='cursor-pointer' />
 					</a>
 					<a
 						href='https://www.instagram.com/jared_river/'
 						target='_blank'
+						rel='noreferrer'
 						title='Link to Instagram profile'>
 						<Image src={instagram} className='cursor-pointer' />
 					</a>
