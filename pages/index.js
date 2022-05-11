@@ -18,6 +18,7 @@ export default function Home({
 	user_id,
 	send_js_token,
 	service_id,
+	projectItems,
 }) {
 	const [isOpen, setOpen] = useState(false);
 
@@ -49,11 +50,11 @@ export default function Home({
 			<main className='overflow-hidden relative'>
 				<BackgroundName />
 				<LandingPage />
-				<navbar>
+				<navbar className='z-30'>
 					<Navbar isOpen={isOpen} setOpen={setOpen} />
 				</navbar>
 				<About items={techItems} url={url} />
-				<Projects />
+				<Projects data={projectItems} url={url} />
 				<ContactMe
 					email={email}
 					service_id={service_id}
@@ -80,15 +81,16 @@ export async function getStaticProps() {
 			encodeValuesOnly: true,
 		}
 	);
-	const techRes = await axios.get(
-		process.env.STRAPI_API_URL + `/technologies?${query}`
-	);
+	const techRes = await axios.get(url + `/technologies?${query}`);
+	const projectsRes = await axios.get(url + `/projects?${query}`);
 
-	const techItems = techRes.data.data;
+	let techItems = techRes.data.data;
+	let projectItems = projectsRes.data.data;
 
 	return {
 		props: {
 			techItems,
+			projectItems,
 			url,
 			email,
 			user_id,

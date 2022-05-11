@@ -11,16 +11,12 @@ function About({ items, url }) {
 		setTech([front, back, neither]);
 	}, []);
 
-	useEffect(() => {
-		tech && tech.map((section) => section.map((item) => console.log(item)));
-	}, [tech]);
-
 	return (
 		<div id='about' className='about h-screen w-screen p-2'>
-			<div className='h-full flex flex-col justify-center items-center'>
+			<div className='h-full flex flex-col justify-center items-center py-5'>
 				<p className='text-3xl text-center'>TECHNOLOGIES I'VE USED</p>
 				{tech && (
-					<div className='grid p-auto m-7 justify-center items-center grid-cols-3 max-h-sm:max-w-[70%] sm:max-h-[60%] sm:grid-cols-4'>
+					<div className='grid p-auto m-7 justify-center items-center grid-cols-3'>
 						{tech.map((section) =>
 							section.map((item) => (
 								<div

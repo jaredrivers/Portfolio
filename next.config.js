@@ -5,4 +5,8 @@ const nextConfig = {
 
 module.exports = {
 	nextConfig,
+	images: {
+		domains: ["localhost"],
+		formats: ["image/avif", "image/webp"],
+	},
 };

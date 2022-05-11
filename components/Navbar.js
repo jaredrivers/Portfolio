@@ -11,11 +11,11 @@ function Navbar({ isOpen, setOpen }) {
 	];
 
 	return (
-		<div className='navbar w-screen h-auto fixed top-0'>
+		<div className='navbar w-screen h-auto fixed top-0 z-50'>
 			<div className='grid justify-items-stretch w-inherit px-3'>
 				<div className='flex flex-col-reverse items-end md:flex-row md:items-center md:justify-end'>
 					{isOpen && (
-						<ul className='grid justify-items-end md:flex md:items-center md:space-x-2'>
+						<ul className='grid justify-items-end md:flex md:items-center md:space-x-2 mix-blend-exclusion'>
 							{menuPages.map((item) => (
 								<Link
 									key={item.id}

@@ -34,7 +34,7 @@ function LandingPage() {
 				/>
 				<div className='flex flex-col self-center justify-center items-center w-max space-y-2 flex-wrap'>
 					<p className='text-center'>JARED RIVER</p>
-					<p className='text-center'>FULL STACK WEB DEVELOPER</p>
+					<p className='text-center'>FULL STACK ENGINEER</p>
 					<p className='text-center'>TEL AVIV</p>
 					<Footer />
 				</div>
