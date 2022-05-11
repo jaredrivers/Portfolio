@@ -18,14 +18,29 @@ export const getServerSideProps = async (context) => {
 			encodeValuesOnly: true,
 		}
 	);
+	const query1 = qs.stringify(
+		{
+			populate: {
+				technologies: {
+					populate: "*",
+				},
+			},
+		},
+
+		{
+			encodeValuesOnly: true,
+		}
+	);
 	const res = await axios.get(`${url}/projects/${pid}?${query}`);
+	const techRes = await axios.get(url + `/technologies?${query}`);
 
 	const projectData = res.data.data;
+	const techItems = techRes.data;
 
-	return { props: { projectData, url } };
+	return { props: { projectData, url, techItems } };
 };
 
-function ExampleProject({ projectData, url }) {
+function ExampleProject({ projectData, url, techItems }) {
 	let images = projectData.attributes.samples.data;
 	images = images.sort((a, b) => a.attributes.name - b.attributes.name);
 
@@ -42,16 +57,16 @@ function ExampleProject({ projectData, url }) {
 					<ImageCarousel images={images} url={url}></ImageCarousel>
 				</div>
 
-				<div className='z-0 flex-col sm:grid sm:grid-cols-2 gap-10 px-10'>
+				<div className='z-0 flex-col sm:grid sm:grid-cols-3 gap-10 px-10'>
 					<div className='left flex flex-col'>
 						<p className='left-title self-center'>ABOUT THIS PROJECT:</p>
 						<p className='description'>{projectData.attributes.description}</p>
 					</div>
-					<div className='right flex flex-col'>
+					<div className='right flex flex-col col-span-2	'>
 						<p className='right-title self-center '>TECHNOLOGIES</p>
 						<div className='grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 m-auto'>
 							{projectData.attributes.technologies.data.map((item) => (
-								<div key={item.id} className='flex items-center justify-center'>
+								<div className='flex justify-center items-center' key={item.id}>
 									{item.attributes.label}
 								</div>
 							))}

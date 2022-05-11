@@ -54,7 +54,7 @@ export default function Home({
 					<Navbar isOpen={isOpen} setOpen={setOpen} />
 				</navbar>
 				<About items={techItems} url={url} />
-				<Projects data={projectItems} url={url} />
+				<Projects data={projectItems} url={url} techItems={techItems} />
 				<ContactMe
 					email={email}
 					service_id={service_id}

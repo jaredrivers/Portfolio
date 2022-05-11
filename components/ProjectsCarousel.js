@@ -7,7 +7,8 @@ import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
 
-function ProjectsCarousel({ data, url }) {
+function ProjectsCarousel({ data, url, techItems }) {
+	console.log(techItems);
 	return (
 		<>
 			{data && (
@@ -15,7 +16,7 @@ function ProjectsCarousel({ data, url }) {
 					navigation={true}
 					modules={[Mousewheel, Navigation]}
 					slidesPerView={1.5}
-					className='mySwiper h-[70%] z-0 pl-[10rem]'
+					className='mySwiper h-[70%] z-0'
 					spaceBetween={20}
 					breakpoints={{
 						"@0.00": {
@@ -26,7 +27,12 @@ function ProjectsCarousel({ data, url }) {
 						"@1.0052": {
 							slidesPerView: 1.5,
 							spaceBetween: 330,
-							centeredSlides: true,
+							centeredSlides: false,
+						},
+						"@1.1": {
+							slidesPerView: 1.5,
+							spaceBetween: 200,
+							centeredSlides: false,
 						},
 						"@1.30": {
 							slidesPerView: 1.5,
@@ -50,8 +56,10 @@ function ProjectsCarousel({ data, url }) {
 						},
 					}}>
 					{data?.map((project) => (
-						<SwiperSlide className='items-center flex z-0' key={project.id}>
-							<div className='flex flex-col items-center text-right text-lg'>
+						<SwiperSlide
+							className='items-center flex z-0 pl-10'
+							key={project.id}>
+							<div className='flex flex-col items-center text-right text-lg space-y-5'>
 								<div className='w-full'>
 									{project.attributes.title.split(" ").map((word) => (
 										<h2
@@ -61,14 +69,15 @@ function ProjectsCarousel({ data, url }) {
 										</h2>
 									))}
 								</div>
+
 								<div className='w-full'>
 									<div className='hover:text-theme-blue-dark hover:cursor-pointer text-right ml-[3rem]'>
 										<Link href={`${project.attributes.projectUrl}`}>
-											<>
+											<a>
 												<h2 key='about'>ABOUT</h2>
 												<h2 key='this'>THIS</h2>
 												<h2 key='site'>SITE</h2>
-											</>
+											</a>
 										</Link>
 									</div>
 								</div>
@@ -96,7 +105,7 @@ function ProjectsCarousel({ data, url }) {
 						</SwiperSlide>
 					))}
 					<SwiperSlide className='flex items-center justify-center last-slide'>
-						<div className=' text-5xl flex flex-col justify-center items-center m-auto'>
+						<div className=' text-4xl flex flex-col justify-center items-center m-auto'>
 							<p className='hover:text-theme-blue-dark hover:cursor-default'>
 								MORE
 							</p>

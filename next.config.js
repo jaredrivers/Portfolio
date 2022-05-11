@@ -6,7 +6,16 @@ const nextConfig = {
 module.exports = {
 	nextConfig,
 	images: {
-		domains: ["localhost"],
+		domains: [
+			"localhost",
+			"strapi-portfolio-admin-jared.herokuapp.com",
+			"jaredriver.tech",
+			"www.jaredriver.tech",
+			"https://www.jaredriver.tech",
+			"jaredriver.com",
+			"www.jaredriver.com",
+			"http://www.jaredriver.com",
+		],
 		formats: ["image/avif", "image/webp"],
 	},
 };

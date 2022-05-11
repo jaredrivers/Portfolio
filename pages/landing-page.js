@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import NavigationMenu from "../components/NavigationMenu";
 import { gsap } from "../node_modules/gsap/dist/gsap.js";
-import profileImg from "../public/profile1.png";
+import profileImg from "../public/profile10mb.png";
 import Footer from "../components/Footer";
 
 function LandingPage() {
@@ -27,7 +27,7 @@ function LandingPage() {
 					src={profileImg}
 					alt='profile image'
 					width={350}
-					height={344}
+					height={351}
 					layout='fixed'
 					className='rounded-full pointer-events-none'
 					priority
