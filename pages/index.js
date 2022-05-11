@@ -11,7 +11,6 @@ import gsap from "../node_modules/gsap/dist/gsap.js";
 import qs from "querystring";
 
 export default function Home({
-	posts,
 	techItems,
 	url,
 	email,
