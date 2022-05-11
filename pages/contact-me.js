@@ -50,10 +50,8 @@ function ContactMe({ email, user_id, service_id }) {
 
 	const submitHandler = async (e) => {
 		e.preventDefault();
-		console.log(contactForm.resume);
 
 		for (let [key, value] of Object.entries(contactForm)) {
-			console.log(key, value);
 			if (!value && key !== "resume") {
 				setError("PLEASE COMPLETE THE FORM.");
 			}
@@ -78,7 +76,6 @@ function ContactMe({ email, user_id, service_id }) {
 						setLoading(false);
 					});
 			} catch (err) {
-				console.log(err);
 				setError(err.message);
 				setLoading(false);
 			}

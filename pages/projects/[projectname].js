@@ -28,7 +28,6 @@ export const getServerSideProps = async (context) => {
 function ExampleProject({ projectData, url }) {
 	let images = projectData.attributes.samples.data;
 	images = images.sort((a, b) => a.attributes.name - b.attributes.name);
-	console.log(projectData);
 
 	return (
 		<div className='flex justify-center font-mono h-screen w-screen relative'>

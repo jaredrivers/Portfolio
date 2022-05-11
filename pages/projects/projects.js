@@ -2,8 +2,6 @@ import React from "react";
 import ProjectsCarousel from "../../components/ProjectsCarousel";
 
 function Projects({ data, url }) {
-	console.log(data);
-
 	return (
 		<div
 			id='projects'
