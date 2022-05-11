@@ -27,7 +27,7 @@ function LandingPage() {
 					src={profileImg}
 					alt='profile image'
 					width={350}
-					height={351}
+					height={344}
 					layout='fixed'
 					className='rounded-full pointer-events-none'
 					priority

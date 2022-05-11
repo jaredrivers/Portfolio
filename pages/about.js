@@ -16,7 +16,7 @@ function About({ items, url }) {
 			<div className='h-full flex flex-col justify-center items-center py-5'>
 				<p className='text-3xl text-center'>TECHNOLOGIES I&apos;VE USED</p>
 				{tech && (
-					<div className='grid p-auto m-7 justify-center items-center grid-cols-3'>
+					<div className='grid p-auto m-7 justify-center items-center grid-cols-3 w-[80%]'>
 						{tech.map((section) =>
 							section.map((item) => (
 								<div
