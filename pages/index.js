@@ -47,14 +47,16 @@ export default function Home({
 				<meta name='description' content="Jared River's Tech Portfolio" />
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
-			<main className='overflow-hidden relative'>
+			<main className='flex flex-col overflow-hidden relative h-full'>
 				<BackgroundName />
-				<LandingPage />
 				<navbar className='z-30'>
 					<Navbar isOpen={isOpen} setOpen={setOpen} />
 				</navbar>
+				<LandingPage />
 				<About items={techItems} url={url} />
+
 				<Projects data={projectItems} url={url} techItems={techItems} />
+
 				<ContactMe
 					email={email}
 					service_id={service_id}

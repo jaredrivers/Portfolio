@@ -56,9 +56,7 @@ function ProjectsCarousel({ data, url, techItems }) {
 						},
 					}}>
 					{data?.map((project) => (
-						<SwiperSlide
-							className='items-center flex z-0 pl-10'
-							key={project.id}>
+						<SwiperSlide className='items-center flex z-0' key={project.id}>
 							<div className='flex flex-col items-center text-right text-lg space-y-5'>
 								<div className='w-full'>
 									{project.attributes.title.split(" ").map((word) => (
@@ -104,8 +102,8 @@ function ProjectsCarousel({ data, url, techItems }) {
 							</div>
 						</SwiperSlide>
 					))}
-					<SwiperSlide className='flex items-center justify-center last-slide'>
-						<div className=' text-4xl flex flex-col justify-center items-center m-auto'>
+					<SwiperSlide className='flex m-auto justify-center'>
+						<div className='text-4xl flex flex-col items-center justify-center'>
 							<p className='hover:text-theme-blue-dark hover:cursor-default'>
 								MORE
 							</p>
