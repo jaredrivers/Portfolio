@@ -3,7 +3,7 @@ import Image from "next/image";
 import NavigationMenu from "../components/NavigationMenu";
 import { gsap } from "../node_modules/gsap/dist/gsap.js";
 import Footer from "../components/Footer";
-import profileImg from "../public/profileImg.png";
+import profileImg from "../public/profile10mb.png";
 
 function LandingPage() {
 	useEffect(() => {
