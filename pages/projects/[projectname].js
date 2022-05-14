@@ -53,7 +53,6 @@ function ExampleProject({ projectData, url, techItems }) {
 		})
 	);
 
-	console.log(filteredItems);
 	return (
 		<div className='flex justify-center font-mono h-screen w-screen relative'>
 			<div className='about-pagewrapper flex flex-col space-y-5 w-full sm:pt-15 h-full'>
@@ -84,24 +83,23 @@ function ExampleProject({ projectData, url, techItems }) {
 					<div className='right flex flex-col col-span-3	'>
 						<p className='right-title self-center '>TECHNOLOGIES</p>
 						<div className='grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 m-auto'>
-							{filteredItems.map((item) => (
-								<div
-									key={item.id}
-									className='flex flex-col items-center justify-center m-3'>
-									<p className='text-xs sm:text-sm text-center'>
-										{item.attributes.label.toUpperCase()}
-									</p>
-									<img
-										src={
-											url.replace("/api", "") +
-											item.attributes.icon.data.attributes.url
-										}
-										height={48}
-										width={48}
-										alt={item.attributes.label}
-									/>
-								</div>
-							))}
+							{filteredItems
+								.sort((a, b) => a?.attributes.order - b?.attributes.order)
+								.map((item) => (
+									<div
+										key={item.id}
+										className='flex flex-col items-center justify-center m-3'>
+										<p className='text-xs sm:text-sm text-center'>
+											{item.attributes.label.toUpperCase()}
+										</p>
+										<img
+											src={item.attributes.icon.data.attributes.url}
+											height={48}
+											width={48}
+											alt={item.attributes.label}
+										/>
+									</div>
+								))}
 						</div>
 					</div>
 				</div>

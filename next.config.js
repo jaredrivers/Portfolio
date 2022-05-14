@@ -17,6 +17,7 @@ module.exports = {
 			"http://www.jaredriver.com",
 			"res.cloudinary.com",
 			"jared-river-portfolio-bucket.s3.us-east-1.amazonaws.com",
+			"jared-river-portfolio-bucket.s3.amazonaws.com",
 		],
 		formats: ["image/avif", "image/webp"],
 	},

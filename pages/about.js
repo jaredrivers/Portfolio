@@ -4,11 +4,10 @@ function About({ items, url }) {
 	const [tech, setTech] = useState();
 
 	useEffect(() => {
-		const front = items.filter((item) => item.attributes.type == "front");
-		const back = items.filter((item) => item.attributes.type == "back");
-		const neither = items.filter((item) => item.attributes.type == null);
-
-		setTech([front, back, neither]);
+		const order = items.sort(
+			(a, b) => a?.attributes.order - b?.attributes.order
+		);
+		setTech(order);
 	}, []);
 
 	return (
@@ -17,26 +16,21 @@ function About({ items, url }) {
 				<p className='text-3xl text-center'>TECHNOLOGIES I&apos;VE USED</p>
 				{tech && (
 					<div className='grid p-auto m-7 justify-center items-center grid-cols-3 gap-x-10'>
-						{tech.map((section) =>
-							section.map((item) => (
-								<div
-									key={item.id}
-									className='flex flex-col items-center justify-center m-3'>
-									<p className='text-xs sm:text-sm text-center'>
-										{item.attributes.label.toUpperCase()}
-									</p>
-									<img
-										src={
-											url.replace("/api", "") +
-											item.attributes.icon.data.attributes.url
-										}
-										height={48}
-										width={48}
-										alt={item.attributes.label}
-									/>
-								</div>
-							))
-						)}
+						{tech.map((item) => (
+							<div
+								key={item.id}
+								className='flex flex-col items-center justify-center m-3'>
+								<p className='text-xs sm:text-sm text-center'>
+									{item.attributes.label.toUpperCase()}
+								</p>
+								<img
+									src={item.attributes.icon.data.attributes.url}
+									height={48}
+									width={48}
+									alt={item.attributes.label}
+								/>
+							</div>
+						))}
 					</div>
 				)}
 			</div>

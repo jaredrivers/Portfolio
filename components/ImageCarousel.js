@@ -39,7 +39,7 @@ function ImageCarousel({ images, url }) {
 				{images.map((img) => (
 					<SwiperSlide key={img.id} className='py-5 md:py-2'>
 						<img
-							src={url.replace("/api", "") + img.attributes.url}
+							src={img.attributes.url}
 							alt={img.attributes.alternativeText}
 							className='rounded-md pointer-events-none self-center'
 							width={img.attributes.width / 4}

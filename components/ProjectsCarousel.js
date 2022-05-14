@@ -8,7 +8,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 function ProjectsCarousel({ data, url, techItems }) {
-	console.log(techItems);
+	console.log(data);
 	return (
 		<>
 			{data && (
@@ -81,24 +81,16 @@ function ProjectsCarousel({ data, url, techItems }) {
 								</div>
 							</div>
 							<div className='flex-col items-center hover:cursor-pointer transition ease-in-out delay-50 hover:scale-105 content-center'>
-								<a
-									href={project.attributes.siteUrl}
-									target='_blank '
-									rel='noreferrer'>
-									<Image
-										src={
-											url.replace("/api", "") +
-											project.attributes.cover.data?.attributes.url
-										}
-										alt='Pet Project Link'
-										layout='fixed'
-										width={project.attributes.cover.data.attributes.width / 4}
-										height={project.attributes.cover.data.attributes.height / 4}
-										className='rounded-md'
-										title='Pet Project Link'
-										priority
-									/>
-								</a>
+								<Image
+									src={project.attributes.cover.data?.attributes.url}
+									alt='Pet Project Link'
+									layout='fixed'
+									width={project.attributes.cover.data.attributes.width / 4}
+									height={project.attributes.cover.data.attributes.height / 4}
+									className='rounded-md'
+									title='Pet Project Link'
+									priority
+								/>
 							</div>
 						</SwiperSlide>
 					))}
