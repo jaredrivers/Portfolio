@@ -14,7 +14,7 @@ module.exports = {
 			"https://www.jaredriver.tech",
 			"jaredriver.com",
 			"www.jaredriver.com",
-			"http://www.jaredriver.com",
+			"https://www.jaredriver.com",
 			"res.cloudinary.com",
 			"jared-river-portfolio-bucket.s3.us-east-1.amazonaws.com",
 			"jared-river-portfolio-bucket.s3.amazonaws.com",
