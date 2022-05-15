@@ -93,7 +93,12 @@ function ExampleProject({ projectData, url, techItems }) {
 											{item.attributes.label.toUpperCase()}
 										</p>
 										<img
-											src={item.attributes.icon.data.attributes.url}
+											src={
+												process.env.NODE_ENV === "development"
+													? url.replace("/api", "") +
+													  item.attributes.icon.data.attributes.url
+													: item.attributes.icon.data.attributes.url
+											}
 											height={48}
 											width={48}
 											alt={item.attributes.label}

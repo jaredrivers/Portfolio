@@ -19,7 +19,7 @@ function NavigationMenu() {
 	}, []);
 
 	return (
-		<ul className='w-full d-flex flex-row -left-40'>
+		<ul className='w-full d-flex flex-row lg:space-y-1'>
 			{menuPages.map((item) => (
 				<Link
 					key={item.id}
@@ -28,7 +28,7 @@ function NavigationMenu() {
 					smooth={true}
 					duration={1000}
 					spy={true}>
-					<li className='navMenu font-medium text-xl hover:text-theme-blue-dark cursor-pointer'>
+					<li className='navMenu font-medium text-lg md:text-xl xl:text-[1.2rem] 2xl:text-[2.2rem] 2xl:py-2 hover:text-theme-blue-dark cursor-pointer'>
 						{item.label}
 					</li>
 				</Link>

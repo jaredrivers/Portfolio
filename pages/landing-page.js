@@ -7,31 +7,37 @@ import profileImg from "../public/profile10mb.png";
 
 function LandingPage() {
 	useEffect(() => {
-		gsap.to(".profileDiv", {
-			duration: 1.5,
-			ease: "power3.out",
-			y: 0,
-			opacity: 1,
-		});
+		gsap.fromTo(
+			".profileDiv",
+			{
+				duration: 1.5,
+				ease: "power3.out",
+				opacity: 0,
+			},
+			{ opacity: 1 }
+		);
 	}, []);
 
 	return (
 		<div id='landingPage' className='min-h-screen w-screen'>
-			<div className='h-full flex flex-col justify-center py-5 relative space-y-3'>
-				<div className='flex flex-nowrap pt-10 w-auto'>
+			<div className='h-screen flex flex-col justify-center py-5 relative space-y-3'>
+				<div>
 					<NavigationMenu />
 				</div>
-				<div className='profileDiv flex flex-col items-center opacity-0 relative sm:top-0 space-y-10 sm:space-y-3'>
-					<Image
-						src={profileImg}
-						alt='profile image'
-						width={350}
-						height={344}
-						layout='intrinsic'
-						className='rounded-full pointer-events-none'
-						priority
-					/>
-					<div className='flex flex-col self-center justify-center items-center w-max space-y-2 flex-wrap'>
+				<div className='profileDiv flex-col items-center justify-center self-center space-y-3'>
+					<div className='flex justify-center items-center'>
+						<Image
+							src={profileImg}
+							alt='profile image'
+							width={350}
+							height={344}
+							layout='intrinsic'
+							className='rounded-full pointer-events-none m-auto'
+							priority
+						/>
+					</div>
+
+					<div className='flex flex-col self-center justify-center items-center w-max space-y-2 flex-wrap 2xl:text-[2.2rem]'>
 						<p className='text-center'>JARED RIVER</p>
 						<p className='text-center'>FULL STACK ENGINEER</p>
 						<p className='text-center'>TEL AVIV</p>

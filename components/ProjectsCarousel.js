@@ -8,7 +8,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 function ProjectsCarousel({ data, url, techItems }) {
-	console.log(data);
 	return (
 		<>
 			{data && (
@@ -16,7 +15,7 @@ function ProjectsCarousel({ data, url, techItems }) {
 					navigation={true}
 					modules={[Mousewheel, Navigation]}
 					slidesPerView={1.5}
-					className='mySwiper h-[70%] z-0'
+					className='mySwiper z-0'
 					spaceBetween={20}
 					breakpoints={{
 						"@0.00": {
@@ -57,8 +56,8 @@ function ProjectsCarousel({ data, url, techItems }) {
 					}}>
 					{data?.map((project) => (
 						<SwiperSlide className='items-center flex z-0' key={project.id}>
-							<div className='flex flex-col items-center text-right text-lg space-y-5'>
-								<div className='w-full'>
+							<div className='flex flex-col items-center text-right text-lg space-y-5 2xl:space-y-10 xl:text-[1rem] 2xl:text-[2.2rem]'>
+								<div className='w-full 2xl:space-y-5 '>
 									{project.attributes.title.split(" ").map((word) => (
 										<h2
 											className='hover:text-theme-blue-dark hover:cursor-default'
@@ -71,7 +70,7 @@ function ProjectsCarousel({ data, url, techItems }) {
 								<div className='w-full'>
 									<div className='hover:text-theme-blue-dark hover:cursor-pointer text-right ml-[3rem]'>
 										<Link href={`${project.attributes.projectUrl}`}>
-											<a>
+											<a className='2xl:space-y-5'>
 												<h2 key='about'>ABOUT</h2>
 												<h2 key='this'>THIS</h2>
 												<h2 key='site'>SITE</h2>
@@ -80,13 +79,18 @@ function ProjectsCarousel({ data, url, techItems }) {
 									</div>
 								</div>
 							</div>
-							<div className='flex-col items-center hover:cursor-pointer transition ease-in-out delay-50 hover:scale-105 content-center'>
+							<div className='items-center hover:cursor-pointer transition ease-in-out delay-50 hover:scale-105 content-center min-w-[600px] w-[70%]'>
 								<Image
-									src={project.attributes.cover.data?.attributes.url}
+									src={
+										process.env.NODE_ENV === "development"
+											? url.replace("/api", "") +
+											  project.attributes.cover.data?.attributes.url
+											: project.attributes.cover.data?.attributes.url
+									}
 									alt='Pet Project Link'
-									layout='fixed'
-									width={project.attributes.cover.data.attributes.width / 4}
-									height={project.attributes.cover.data.attributes.height / 4}
+									layout='responsive'
+									width={project.attributes.cover.data.attributes.width}
+									height={project.attributes.cover.data.attributes.height}
 									className='rounded-md'
 									title='Pet Project Link'
 									priority
