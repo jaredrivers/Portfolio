@@ -15,7 +15,7 @@ export default function Document() {
 					rel='stylesheet'
 				/>
 			</Head>
-			<body className='bg-theme-beige'>
+			<body className='bg-[#FFBDAD]'>
 				<Main />
 				<NextScript />
 			</body>

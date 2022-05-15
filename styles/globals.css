@@ -6,7 +6,7 @@ html,
 body {
 	padding: 0;
 	margin: 0;
-	font-family: "Syncopate", sans-serif;
+	font-family: sans-serif;
 }
 
 a {
@@ -18,13 +18,11 @@ a {
 	box-sizing: border-box;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
-.scrollbar-hide::-webkit-scrollbar {
-	display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.scrollbar-hide {
-	-ms-overflow-style: none; /* IE and Edge */
-	scrollbar-width: none; /* Firefox */
+.unselectable {
+	user-drag: none;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 }
