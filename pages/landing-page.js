@@ -19,7 +19,7 @@ function LandingPage() {
 	}, []);
 
 	return (
-		<div id='landingPage' className=' w-screen'>
+		<div id='landingPage' className='landingPage w-screen my-auto'>
 			<div className='h-full flex flex-col justify-center py-5 relative space-y-3'>
 				<div>
 					<NavigationMenu />

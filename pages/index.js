@@ -6,7 +6,7 @@ import ContactMe from "./contact-me";
 import LandingPage from "./landing-page";
 import BackgroundName from "../components/BackgroundName";
 import Navbar from "../components/Navbar";
-import gsap from "../node_modules/gsap/dist/gsap.js";
+import { gsap } from "../node_modules/gsap/dist/gsap.js";
 import client from "../client";
 
 export default function Home({
@@ -39,7 +39,7 @@ export default function Home({
 	}, []);
 
 	return (
-		<div>
+		<div className='w-screen relative clip'>
 			<Head>
 				<title>Jared River</title>
 				<meta name='description' content="Jared River's Tech Portfolio" />
@@ -50,7 +50,7 @@ export default function Home({
 			<navbar className='z-30'>
 				<Navbar isOpen={isOpen} setOpen={setOpen} />
 			</navbar>
-			<main className='grid grid-cols-1 grid-rows-[repeat(4,_4fr)] gap-7 relative'>
+			<main className='grid grid-cols-1 grid-rows-[repeat(4,_4fr)] gap-7 w-screen'>
 				<LandingPage />
 				<About items={tech} />
 

@@ -10,13 +10,13 @@ function About({ items }) {
 	}, []);
 
 	return (
-		<div id='about' className='about flex w-screen justify-center'>
+		<div id='about' className='about flex w-screen justify-center px-5'>
 			<div className='h-full flex flex-col justify-center items-center space-y-5'>
 				<p className='text-3xl 2xl:text-[3rem] text-center'>
 					TECHNOLOGIES I&apos;VE USED
 				</p>
 				{tech && (
-					<div className='grid justify-center items-center grid-cols-3 gap-x-10 gap-y-3 '>
+					<div className='grid justify-center items-center grid-cols-3 gap-x-10 gap-y-10 '>
 						{tech.map((item) => (
 							<div
 								key={item.name}

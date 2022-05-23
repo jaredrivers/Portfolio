@@ -16,7 +16,7 @@
 		"@sanity/image-url": "^1.0.1",
 		"axios": "^0.27.2",
 		"groq": "^2.29.3",
-		"gsap": "^3.9.1",
+		"gsap": "^3.10.4",
 		"hamburger-react": "^2.4.1",
 		"next": "12.1.0",
 		"next-sanity": "^0.5.2",

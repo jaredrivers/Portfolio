@@ -5,7 +5,6 @@ import { ScrollTrigger } from "../node_modules/gsap/dist/ScrollTrigger.js";
 function BackgroundName() {
 	gsap.registerPlugin(ScrollTrigger);
 	const ref = useRef(null);
-	const element = useRef(null);
 
 	useEffect(() => {
 		const element = ref.current;
@@ -45,8 +44,8 @@ function BackgroundName() {
 	}, []);
 
 	return (
-		<div ref={ref} className='w-fit h-fit '>
-			<div className='absolute pt-[12%] flex flex-col opacity-10'>
+		<div ref={ref} className='absolute'>
+			<div className='pt-[12%] flex flex-col opacity-10'>
 				<div className='jared'>
 					<span className='text-[30rem]'>JARED</span>
 				</div>
