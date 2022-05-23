@@ -5,8 +5,7 @@ import { Pagination, Mousewheel } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 
-function ImageCarousel({ images, url }) {
-	console.log(images);
+function ImageCarousel({ images }) {
 	return (
 		<>
 			<Swiper

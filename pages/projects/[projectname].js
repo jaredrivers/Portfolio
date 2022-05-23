@@ -31,21 +31,8 @@ export const getServerSideProps = async (context) => {
 	return { props: { projectData, pid } };
 };
 
-function ExampleProject({ projectData, pid }) {
+function ExampleProject({ projectData }) {
 	const images = projectData.gallery.data;
-	console.log(projectData);
-
-	// let images = projectData.attributes.samples.data;
-	// images = images.sort((a, b) => a.attributes.name - b.attributes.name);
-	// let filteredItems = [];
-
-	// techItems.data.map((item1) =>
-	// 	projectData.attributes.technologies.data.map((item2) => {
-	// 		if (item1.id === item2.id) {
-	// 			filteredItems.push(item1);
-	// 		}
-	// 	})
-	// );
 
 	return (
 		<div className='flex justify-center font-mono h-screen w-screen relative'>

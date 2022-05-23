@@ -18,7 +18,6 @@ export default function Home({
 	tech,
 }) {
 	const [isOpen, setOpen] = useState(false);
-	console.log(projects);
 
 	useEffect(() => {
 		gsap.fromTo(
@@ -40,17 +39,18 @@ export default function Home({
 	}, []);
 
 	return (
-		<>
+		<div>
 			<Head>
 				<title>Jared River</title>
 				<meta name='description' content="Jared River's Tech Portfolio" />
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
-			<main className='flex flex-col overflow-hidden relative h-full'>
-				<BackgroundName />
-				<navbar className='z-30'>
-					<Navbar isOpen={isOpen} setOpen={setOpen} />
-				</navbar>
+
+			<BackgroundName />
+			<navbar className='z-30'>
+				<Navbar isOpen={isOpen} setOpen={setOpen} />
+			</navbar>
+			<main className='grid grid-cols-1 grid-rows-[repeat(4,_4fr)] gap-7 relative'>
 				<LandingPage />
 				<About items={tech} />
 
@@ -63,7 +63,7 @@ export default function Home({
 					token={send_js_token}
 				/>
 			</main>
-		</>
+		</div>
 	);
 }
 
@@ -72,16 +72,16 @@ export async function getStaticProps() {
 	const user_id = process.env.SEND_JS_USER_ID;
 	const send_js_token = process.env.SEND_JS_TOKEN;
 	const service_id = process.env.SEND_JS_SERVICE_ID;
-	const url = process.env.API_URL;
 
 	const projects = await client.fetch(`*[_type == "project"] {
 		name,
 		URL,
 		slug,
+		'id': _id,
 		cover {
 			asset-> {
 				url,
-				dimensions
+				'dimensions': metadata.dimensions{height, width}
 			}
 		}
 	}`);
@@ -99,7 +99,6 @@ export async function getStaticProps() {
 	return {
 		props: {
 			projects,
-			url,
 			email,
 			user_id,
 			send_js_token,

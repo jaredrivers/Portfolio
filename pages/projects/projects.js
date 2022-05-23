@@ -5,7 +5,7 @@ function Projects({ data }) {
 	return (
 		<div
 			id='projects'
-			className='min-h-screen w-screen overflow-x-scroll scrollbar-hide flex items-center z-0'>
+			className=' w-screen overflow-x-scroll scrollbar-hide flex items-center z-0 justify-center'>
 			<ProjectsCarousel data={data} />
 		</div>
 	);

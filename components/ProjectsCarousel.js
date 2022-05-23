@@ -3,14 +3,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Mousewheel } from "swiper";
 import Link from "next/link";
 import Image from "next/image";
-import client from "../client";
-import { useNextSanityImage } from "next-sanity-image";
 
 import "swiper/css";
 import "swiper/css/navigation";
 
 function ProjectsCarousel({ data }) {
-	console.log(data);
 	return (
 		<>
 			{data && (
@@ -57,8 +54,8 @@ function ProjectsCarousel({ data }) {
 							centeredSlides: false,
 						},
 					}}>
-					{data?.map((project) => (
-						<SwiperSlide className='items-center flex z-0' key={project._id}>
+					{data.map((project) => (
+						<SwiperSlide className='items-center flex z-0' key={project.id}>
 							<div className='flex flex-col items-center text-right text-lg space-y-5 2xl:space-y-10 xl:text-[1rem] 2xl:text-[2.2rem]'>
 								<div className='w-full 2xl:space-y-5 '>
 									{project.name.split(" ").map((word) => (
@@ -82,18 +79,17 @@ function ProjectsCarousel({ data }) {
 									</div>
 								</div>
 							</div>
-							{/* <div className='items-center hover:cursor-pointer transition ease-in-out delay-50 hover:scale-105 content-center min-w-[600px] w-[70%]'>
+							<div className='items-center hover:cursor-pointer transition ease-in-out delay-50 hover:scale-105 content-center min-w-[600px] w-[70%]'>
 								<Image
-									{...imageProps}
 									layout='responsive'
-									sizes='(max-width: 800px) 100vw, 800px'
+									height={project.cover.asset.dimensions.height}
+									width={project.cover.asset.dimensions.width}
 									src={project.cover.asset.url}
 									alt='Pet Project Link'
 									className='rounded-md'
 									title='Pet Project Link'
-									priority
 								/>
-							</div> */}
+							</div>
 						</SwiperSlide>
 					))}
 					<SwiperSlide className='flex m-auto justify-center'>
