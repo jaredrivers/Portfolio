@@ -3,11 +3,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Mousewheel } from "swiper";
 import Link from "next/link";
 import Image from "next/image";
+import client from "../client";
+import { useNextSanityImage } from "next-sanity-image";
 
 import "swiper/css";
 import "swiper/css/navigation";
 
-function ProjectsCarousel({ data, url, techItems }) {
+function ProjectsCarousel({ data }) {
+	console.log(data);
 	return (
 		<>
 			{data && (
@@ -55,10 +58,10 @@ function ProjectsCarousel({ data, url, techItems }) {
 						},
 					}}>
 					{data?.map((project) => (
-						<SwiperSlide className='items-center flex z-0' key={project.id}>
+						<SwiperSlide className='items-center flex z-0' key={project._id}>
 							<div className='flex flex-col items-center text-right text-lg space-y-5 2xl:space-y-10 xl:text-[1rem] 2xl:text-[2.2rem]'>
 								<div className='w-full 2xl:space-y-5 '>
-									{project.attributes.title.split(" ").map((word) => (
+									{project.name.split(" ").map((word) => (
 										<h2
 											className='hover:text-theme-blue-dark hover:cursor-default'
 											key={word}>
@@ -69,7 +72,7 @@ function ProjectsCarousel({ data, url, techItems }) {
 
 								<div className='w-full'>
 									<div className='hover:text-theme-blue-dark hover:cursor-pointer text-right ml-[3rem]'>
-										<Link href={`${project.attributes.projectUrl}`}>
+										<Link href={project.slug.current}>
 											<a className='2xl:space-y-5'>
 												<h2 key='about'>ABOUT</h2>
 												<h2 key='this'>THIS</h2>
@@ -79,23 +82,18 @@ function ProjectsCarousel({ data, url, techItems }) {
 									</div>
 								</div>
 							</div>
-							<div className='items-center hover:cursor-pointer transition ease-in-out delay-50 hover:scale-105 content-center min-w-[600px] w-[70%]'>
+							{/* <div className='items-center hover:cursor-pointer transition ease-in-out delay-50 hover:scale-105 content-center min-w-[600px] w-[70%]'>
 								<Image
-									src={
-										process.env.NODE_ENV === "development"
-											? url.replace("/api", "") +
-											  project.attributes.cover.data?.attributes.url
-											: project.attributes.cover.data?.attributes.url
-									}
-									alt='Pet Project Link'
+									{...imageProps}
 									layout='responsive'
-									width={project.attributes.cover.data.attributes.width}
-									height={project.attributes.cover.data.attributes.height}
+									sizes='(max-width: 800px) 100vw, 800px'
+									src={project.cover.asset.url}
+									alt='Pet Project Link'
 									className='rounded-md'
 									title='Pet Project Link'
 									priority
 								/>
-							</div>
+							</div> */}
 						</SwiperSlide>
 					))}
 					<SwiperSlide className='flex m-auto justify-center'>

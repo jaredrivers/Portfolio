@@ -36,7 +36,6 @@ function LandingPage() {
 							priority
 						/>
 					</div>
-
 					<div className='flex flex-col self-center justify-center items-center w-max space-y-2 flex-wrap 2xl:text-[2.2rem]'>
 						<p className='text-center'>JARED RIVER</p>
 						<p className='text-center'>FULL STACK ENGINEER</p>

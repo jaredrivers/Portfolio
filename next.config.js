@@ -7,8 +7,7 @@ module.exports = {
 	nextConfig,
 	images: {
 		domains: [
-			"localhost",
-			"strapi-portfolio-admin-jared.herokuapp.com",
+			"cdn.sanity.io",
 			"jaredriver.tech",
 			"www.jaredriver.tech",
 			"https://www.jaredriver.tech",

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
-import axios from "axios";
 import About from "./about";
 import Projects from "./projects/projects";
 import ContactMe from "./contact-me";
@@ -8,18 +7,18 @@ import LandingPage from "./landing-page";
 import BackgroundName from "../components/BackgroundName";
 import Navbar from "../components/Navbar";
 import gsap from "../node_modules/gsap/dist/gsap.js";
-import qs from "querystring";
+import client from "../client";
 
 export default function Home({
-	techItems,
-	url,
 	email,
 	user_id,
 	send_js_token,
 	service_id,
-	projectItems,
+	projects,
+	tech,
 }) {
 	const [isOpen, setOpen] = useState(false);
+	console.log(projects);
 
 	useEffect(() => {
 		gsap.fromTo(
@@ -53,9 +52,9 @@ export default function Home({
 					<Navbar isOpen={isOpen} setOpen={setOpen} />
 				</navbar>
 				<LandingPage />
-				<About items={techItems} url={url} />
+				<About items={tech} />
 
-				<Projects data={projectItems} url={url} techItems={techItems} />
+				<Projects data={projects} />
 
 				<ContactMe
 					email={email}
@@ -73,31 +72,39 @@ export async function getStaticProps() {
 	const user_id = process.env.SEND_JS_USER_ID;
 	const send_js_token = process.env.SEND_JS_TOKEN;
 	const service_id = process.env.SEND_JS_SERVICE_ID;
-	const url = process.env.STRAPI_API_URL;
+	const url = process.env.API_URL;
 
-	const query = qs.stringify(
-		{
-			populate: "*",
-		},
-		{
-			encodeValuesOnly: true,
+	const projects = await client.fetch(`*[_type == "project"] {
+		name,
+		URL,
+		slug,
+		cover {
+			asset-> {
+				url,
+				dimensions
+			}
 		}
-	);
-	const techRes = await axios.get(url + `/technologies?${query}`);
-	const projectsRes = await axios.get(url + `/projects?${query}`);
-
-	let techItems = techRes.data.data;
-	let projectItems = projectsRes.data.data;
+	}`);
+	const tech = await client.fetch(`*[_type == "technology"] {
+		icon {
+			asset-> {
+				url
+			}
+		},
+		name,
+		mainPage,
+		order,
+	}`);
 
 	return {
 		props: {
-			techItems,
-			projectItems,
+			projects,
 			url,
 			email,
 			user_id,
 			send_js_token,
 			service_id,
+			tech,
 		},
 	};
 }

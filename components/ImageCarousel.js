@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 function ImageCarousel({ images, url }) {
+	console.log(images);
 	return (
 		<>
 			<Swiper
@@ -39,15 +40,10 @@ function ImageCarousel({ images, url }) {
 				{images.map((img) => (
 					<SwiperSlide key={img.id} className='py-5 md:py-2'>
 						<img
-							src={
-								process.env.NODE_ENV === "development"
-									? url.replace("/api", "") + img.attributes.url
-									: img.attributes.url
-							}
-							alt={img.attributes.alternativeText}
+							src={img.url}
 							className='rounded-md pointer-events-none self-center'
-							width={img.attributes.width / 4}
-							height={img.attributes.height / 4}
+							width={img.dimensions.width / 4}
+							height={img.dimensions.height / 4}
 							layout='fixed'
 						/>
 					</SwiperSlide>
