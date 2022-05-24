@@ -26,7 +26,7 @@ function LandingPage() {
 				</div>
 				<div className='profileDiv flex-col items-center justify-center self-center space-y-3'>
 					<div className='justify-center items-center'>
-						<div className='block max-w-[400px] m-auto p-5'>
+						<div className='block max-w-[350px] sm:max-w-[400px] m-auto p-5'>
 							<Image
 								src={profileImg}
 								alt='profile image'
