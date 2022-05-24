@@ -39,7 +39,7 @@ export default function Home({
 	}, []);
 
 	return (
-		<div className='w-screen relative clip overflow-hidden'>
+		<div className='w-full relative clip overflow-hidden'>
 			<Head>
 				<title>Jared River</title>
 				<meta name='description' content="Jared River's Tech Portfolio" />
