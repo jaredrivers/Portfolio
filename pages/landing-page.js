@@ -25,16 +25,18 @@ function LandingPage() {
 					<NavigationMenu />
 				</div>
 				<div className='profileDiv flex-col items-center justify-center self-center space-y-3'>
-					<div className='flex justify-center items-center'>
-						<Image
-							src={profileImg}
-							alt='profile image'
-							width={350}
-							height={344}
-							layout='intrinsic'
-							className='rounded-full pointer-events-none m-auto'
-							priority
-						/>
+					<div className='justify-center items-center'>
+						<div className='block max-w-[400px] m-auto'>
+							<Image
+								src={profileImg}
+								alt='profile image'
+								width={350 / 10}
+								height={344 / 10}
+								layout='responsive'
+								className='rounded-full pointer-events-none m-auto'
+								priority
+							/>
+						</div>
 					</div>
 					<div className='flex flex-col self-center justify-center items-center w-max space-y-2 flex-wrap 2xl:text-[2.2rem]'>
 						<p className='text-center'>JARED RIVER</p>

@@ -85,7 +85,7 @@ function ContactMe({ email, user_id, service_id }) {
 	return (
 		<div
 			id='contactMe'
-			className='flex w-screen items-center justify-center mb-10'>
+			className='flex w-screen items-center justify-center mb-5'>
 			<div className='md:mt-0 w-[90%] md:w-[70%] md:max-w-full mx-auto'>
 				<p className='text-2xl mb-[2rem] sm:mb-[5rem] 2xl:text-[2.2rem]'>
 					LET&apos;S KEEP IN TOUCH
