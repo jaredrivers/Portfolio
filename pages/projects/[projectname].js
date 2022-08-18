@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
 import Link from "next/link";
 import ImageCarousel from "../../components/ImageCarousel";

@@ -19,7 +19,7 @@ function NavigationMenu() {
 	}, []);
 
 	return (
-		<ul className='w-full d-flex flex-row lg:space-y-1'>
+		<ul className='d-flex flex-row lg:space-y-1 w-max'>
 			{menuPages.map((item) => (
 				<Link
 					key={item.id}

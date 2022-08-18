@@ -35,6 +35,10 @@ function ImageCarousel({ images }) {
 						slidesPerView: 2,
 						spaceBetween: -75,
 					},
+					"@1.70": {
+						slidesPerView: 2,
+						spaceBetween: -75,
+					},
 				}}>
 				{images.map((img) => (
 					<SwiperSlide key={img.id} className='py-5 md:py-2'>

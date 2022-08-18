@@ -24,7 +24,7 @@ function Navbar({ isOpen, setOpen }) {
 									smooth={true}
 									duration={1000}
 									spy={true}>
-									<li className='font-medium text-xl hover:text-theme-blue-dark md:bg-transparent cursor-pointer 2xl:text-[2rem]'>
+									<li className='font-medium text-[2em] hover:text-theme-blue-dark md:bg-transparent cursor-pointer'>
 										{item.label}
 									</li>
 								</Link>

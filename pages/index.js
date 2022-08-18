@@ -47,10 +47,11 @@ export default function Home({
 			</Head>
 
 			<BackgroundName />
+
 			<navbar className='z-30'>
 				<Navbar isOpen={isOpen} setOpen={setOpen} />
 			</navbar>
-			<main className='grid grid-cols-1 grid-rows-[repeat(4,_4fr)] gap-7 w-screen'>
+			<main className='grid grid-cols-1 grid-rows-[repeat(4,_4fr)] gap-7 w-screen justify-center max-w-[1920px]'>
 				<LandingPage />
 				<About items={tech} />
 
