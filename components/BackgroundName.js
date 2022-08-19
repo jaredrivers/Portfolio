@@ -44,7 +44,7 @@ function BackgroundName() {
 	}, []);
 
 	return (
-		<div ref={ref} className='absolute overflow-hidden -z-10'>
+		<div ref={ref} className='absolute -z-10'>
 			<div className='pt-[12%] flex flex-col opacity-10'>
 				<div className='jared'>
 					<span className='text-[30rem]'>JARED</span>

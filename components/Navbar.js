@@ -1,13 +1,13 @@
 import React from "react";
 import Hamburger from "hamburger-react";
-import { Link } from "react-scroll";
+import Link from 'next/link'
 
 function Navbar({ isOpen, setOpen }) {
 	const menuPages = [
-		{ id: "landingPage", link: "/landing-page", label: "TOP" },
-		{ id: "about", link: "/about", label: "ABOUT" },
-		{ id: "projects", link: "/projects", label: "PROJECTS" },
-		{ id: "contactMe", link: "contact-me", label: "CONTACT ME" },
+		{ id: "landingPage", href: "/#landing-page", label: "TOP" },
+		{ id: "about", href: "/#about", label: "ABOUT" },
+		{ id: "projects", href: "/#projects", label: "PROJECTS" },
+		{ id: "contactMe", href: "/#contact-me", label: "CONTACT ME" },
 	];
 
 	return (
@@ -19,11 +19,7 @@ function Navbar({ isOpen, setOpen }) {
 							{menuPages.map((item) => (
 								<Link
 									key={item.id}
-									activeClass='text-theme-blue-dark'
-									to={item.id}
-									smooth={true}
-									duration={1000}
-									spy={true}>
+									href={item.href}>
 									<li className='font-medium text-[2em] hover:text-theme-blue-dark md:bg-transparent cursor-pointer'>
 										{item.label}
 									</li>

@@ -10,8 +10,8 @@ function About({ items }) {
 	}, []);
 
 	return (
-		<div id='about' className='about flex w-screen justify-center px-5'>
-			<div className='h-full flex flex-col justify-center items-center space-y-5'>
+		<div id='about' className='about flex w-full justify-center py-16'>
+			<div className='max-w-[1240px] m-auto flex flex-col justify-center items-center space-y-5'>
 				<p className='text-3xl 2xl:text-[3rem] text-center'>
 					TECHNOLOGIES I&apos;VE USED
 				</p>

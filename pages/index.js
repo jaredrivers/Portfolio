@@ -5,7 +5,7 @@ import Projects from "./projects/projects";
 import ContactMe from "./contact-me";
 import LandingPage from "./landing-page";
 import BackgroundName from "../components/BackgroundName";
-import Navbar from "../components/Navbar";
+import Navbar from '../components/Navbar'
 import { gsap } from "../node_modules/gsap/dist/gsap.js";
 import client from "../client";
 
@@ -39,7 +39,7 @@ export default function Home({
 	}, []);
 
 	return (
-		<div className='w-full relative clip overflow-hidden'>
+		<div className="relative overflow-hidden">
 			<Head>
 				<title>Jared River</title>
 				<meta name='description' content="Jared River's Tech Portfolio" />
@@ -48,14 +48,11 @@ export default function Home({
 
 			<BackgroundName />
 
-			<navbar className='z-30'>
 				<Navbar isOpen={isOpen} setOpen={setOpen} />
-			</navbar>
-			<main className='grid grid-cols-1 grid-rows-[repeat(4,_4fr)] gap-7 w-screen justify-center max-w-[1920px]'>
 				<LandingPage />
 				<About items={tech} />
 
-				<Projects data={projects} />
+				{/* <Projects data={projects} /> */}
 
 				<ContactMe
 					email={email}
@@ -63,7 +60,6 @@ export default function Home({
 					user_id={user_id}
 					token={send_js_token}
 				/>
-			</main>
 		</div>
 	);
 }

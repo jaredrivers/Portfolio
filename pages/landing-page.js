@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
-import NavigationMenu from "../components/NavigationMenu";
-import { gsap } from "../node_modules/gsap/dist/gsap.js";
+import { gsap } from "gsap/dist/gsap";
 import Footer from "../components/Footer";
 import profileImg from "../public/profile10mb.png";
+import NavigationMenu from "../components/NavigationMenu";
 
 function LandingPage() {
 	useEffect(() => {
@@ -19,8 +19,8 @@ function LandingPage() {
 	}, []);
 
 	return (
-		<div id='landingPage' className='landingPage w-screen my-auto'>
-			<div className='h-full flex flex-col justify-center py-5 relative space-y-3'>
+		<div id='landingPage' className='landingPage w-full flex items-cente'>
+			<div className='max-w-[1240px] m-auto flex flex-col justify-center py-5 relative space-y-3'>
 				<div>
 					<NavigationMenu />
 				</div>
