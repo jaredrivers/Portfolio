@@ -19,8 +19,8 @@ function LandingPage() {
 	}, []);
 
 	return (
-		<div id='landingPage' className='landingPage w-full flex items-cente'>
-			<div className='max-w-[1240px] m-auto flex flex-col justify-center py-5 relative space-y-3'>
+		<div id='landingPage' className='landingPage w-full flex items-center mt-5'>
+			<div className='max-w-[1240px] m-auto flex flex-col justify-center p-5 relative space-y-3'>
 				<div>
 					<NavigationMenu />
 				</div>
@@ -38,7 +38,7 @@ function LandingPage() {
 							/>
 						</div>
 					</div>
-					<div className='flex flex-col self-center justify-center items-center w-max space-y-2 flex-wrap 2xl:text-[2.2rem]'>
+					<div className='flex flex-col self-center justify-center items-center w-max space-y-2 flex-wrap'>
 						<p className='text-center'>JARED RIVER</p>
 						<p className='text-center'>FULL STACK ENGINEER</p>
 						<p className='text-center'>TEL AVIV</p>

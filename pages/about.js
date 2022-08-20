@@ -10,9 +10,9 @@ function About({ items }) {
 	}, []);
 
 	return (
-		<div id='about' className='about flex w-full justify-center py-16'>
-			<div className='max-w-[1240px] m-auto flex flex-col justify-center items-center space-y-5'>
-				<p className='text-3xl 2xl:text-[3rem] text-center'>
+		<div id='about' className='about flex w-full justify-center p-16'>
+			<div className='max-w-[1240px] m-auto flex flex-col justify-center items-center space-y-8'>
+				<p className='text-3xl text-center'>
 					TECHNOLOGIES I&apos;VE USED
 				</p>
 				{tech && (
@@ -20,8 +20,8 @@ function About({ items }) {
 						{tech.map((item) => (
 							<div
 								key={item.name}
-								className='flex flex-col items-center justify-center 2xl:space-y-7 2xl:m-2'>
-								<p className='text-xs sm:text-sm text-center 2xl:text-[1.7rem]'>
+								className='flex flex-col items-center justify-center '>
+								<p className='text-xs sm:text-sm text-center'>
 									{item.name.toUpperCase()}
 								</p>
 								<div className='min-h-[40px] min-w-[40px] h-[12%] w-[12%]'>

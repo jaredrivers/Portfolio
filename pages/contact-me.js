@@ -85,13 +85,13 @@ function ContactMe({ email, user_id, service_id }) {
 	return (
 		<div
 			id='contact-me'
-			className='flex w-full items-center justify-center py-16'>
-			<div className='max-w-[1240px] m-auto md:mt-0 w-[90%] md:w-[70%] md:max-w-full mx-auto'>
-				<p className='text-2xl mb-[2rem] sm:mb-[5rem] 2xl:text-[2.2rem]'>
+			className='flex w-full items-center justify-center p-16'>
+			<div className='max-w-[1240px] w-full space-y-10'>
+				<p className='text-2xl'>
 					LET&apos;S KEEP IN TOUCH
 				</p>
 				<form
-					className='space-y-4 2xl:text-[2rem]'
+					className='space-y-4'
 					ref={form}
 					onSubmit={submitHandler}>
 					{formInputs.map((item) => (
