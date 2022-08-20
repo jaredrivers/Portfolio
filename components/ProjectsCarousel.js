@@ -5,7 +5,6 @@ import Image from "next/image";
 
 
 function ProjectsCarousel({ data }) {
-	console.log(data)
 
 	const style = {
 			color: '#A9A9A9'
@@ -17,8 +16,8 @@ function ProjectsCarousel({ data }) {
 					<Carousel 
 					navButtonsAlwaysVisible={true}
 					navButtonsProps={{style}}>
-				{data.map((project) => (
-					<div className="previewWrapper grid grid-cols-3 sm:grid-cols-5 items-center">
+				{data.map((project, i) => (
+					<div className="previewWrapper grid grid-cols-3 sm:grid-cols-5 items-center" key={i}>
 							<div className='flex flex-col text-right space-y-5'>
 								<div className="space-y-1 flex flex-col text-right">
 								{project.name.split(" ").map((word) => (
