@@ -11,7 +11,7 @@ function Navbar({ isOpen, setOpen }) {
 	];
 
 	return (
-		<div className='navbar w-screen h-auto fixed top-0 2xl:top-5 z-50'>
+		<div className='navbar w-auto h-auto fixed top-0 right-0 2xl:top-5 z-50'>
 			<div className='grid justify-items-stretch w-inherit px-3'>
 				<div className='flex flex-col-reverse items-end md:flex-row md:items-center md:justify-end'>
 					{isOpen && (
