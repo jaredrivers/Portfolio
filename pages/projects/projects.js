@@ -5,10 +5,10 @@ function Projects({ data }) {
   return (
     <div
       id="projects"
-      className="w-full scrollbar-hide flex items-center z-0 justify-center"
+      className="w-full scrollbar-hide flex"
     >
-      <div className="max-w-[1920px] m-auto">
-        {/* <ProjectsCarousel data={data} /> */}
+      <div className="max-w-[1920px] w-full items-center justify-center">
+        <ProjectsCarousel data={data} />
       </div>
     </div>
   );

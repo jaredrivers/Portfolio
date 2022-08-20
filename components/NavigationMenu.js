@@ -5,7 +5,7 @@ import Link from 'next/link'
 function NavigationMenu() {
 	const menuPages = [
 		{ id: "landingPage", href: "/", label: "TOP" },
-		{ id: "about", href: "/#about", label: "ABOUT" },
+		{ id: "about", href: "/#about", label: "SKILLS" },
 		{ id: "projects", href: "/#projects", label: "PROJECTS" },
 		{ id: "contactMe", href: "/#contact-me", label: "CONTACT ME" },
 	];

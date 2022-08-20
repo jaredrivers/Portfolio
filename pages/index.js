@@ -52,7 +52,7 @@ export default function Home({
 				<LandingPage />
 				<About items={tech} />
 
-				{/* <Projects data={projects} /> */}
+				<Projects data={projects} />
 
 				<ContactMe
 					email={email}

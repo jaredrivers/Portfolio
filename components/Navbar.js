@@ -5,7 +5,7 @@ import Link from 'next/link'
 function Navbar({ isOpen, setOpen }) {
 	const menuPages = [
 		{ id: "landingPage", href: "/#landing-page", label: "TOP" },
-		{ id: "about", href: "/#about", label: "ABOUT" },
+		{ id: "about", href: "/#about", label: "SKILLS" },
 		{ id: "projects", href: "/#projects", label: "PROJECTS" },
 		{ id: "contactMe", href: "/#contact-me", label: "CONTACT ME" },
 	];
@@ -20,7 +20,7 @@ function Navbar({ isOpen, setOpen }) {
 								<Link
 									key={item.id}
 									href={item.href}>
-									<li className='font-medium text-[2em] hover:text-theme-blue-dark md:bg-transparent cursor-pointer'>
+									<li className='font-medium hover:text-theme-blue-dark md:bg-transparent cursor-pointer'>
 										{item.label}
 									</li>
 								</Link>
