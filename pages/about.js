@@ -12,7 +12,7 @@ function About({ items }) {
 	return (
 		<div id='about' className='about flex w-full justify-center p-16'>
 			<div className='max-w-[1240px] m-auto flex flex-col justify-center items-center space-y-8'>
-				<p className='text-3xl text-center'>
+				<p className='text-2xl text-center'>
 					TECHNOLOGIES I&apos;VE USED
 				</p>
 				{tech && (
