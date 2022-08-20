@@ -20,7 +20,7 @@ function LandingPage() {
 
 	return (
 		<div id='landingPage' className='landingPage w-full flex items-center mt-5'>
-			<div className='max-w-[1240px] m-auto flex flex-col justify-center p-5 relative space-y-3'>
+			<div className='max-w-[1240px] m-auto flex flex-col justify-center relative space-y-3'>
 				<div>
 					<NavigationMenu />
 				</div>

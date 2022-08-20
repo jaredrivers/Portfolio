@@ -37,7 +37,7 @@ function ProjectsCarousel({ data }) {
 											</a>
 										</Link>
 							</div>
-							<div className='flex justify-center hover:cursor-pointer transition ease-in-out delay-50 hover:scale-105 content-center sm:col-start-2 sm:col-end-5'>
+							<div className='flex justify-center min-w-[300px] hover:cursor-pointer transition ease-in-out delay-50 hover:scale-105 content-center sm:col-start-2 sm:col-end-5'>
 								<a href={project.URL.site}>
 								<img
 									height={project.cover.asset.dimensions.height}
